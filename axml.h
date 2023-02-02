@@ -599,14 +599,6 @@ typedef struct {
  
   unsigned char            **yVector;
 
-  // hacky storing of gtr rate param arguments. 
-  double ac;
-  double ag;
-  double at;
-  double cg;
-  double ct;
-  double to_set[5];
-
   //asc bias
   boolean ascBias;  
   int     ascOffset;
@@ -805,6 +797,11 @@ typedef  struct
 
 
 typedef  struct  {
+
+
+  // storing of input gtr rate param arguments. 
+  double inputSubstRates[5];
+
   boolean optimizeAllTrees;
 
  
