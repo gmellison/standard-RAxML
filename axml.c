@@ -5884,6 +5884,91 @@ static void get_args(int argc, char *argv[], analdef *adef, tree *tr)
 	    case 16:
 	      adef->printIdenticalSequences = TRUE;
 	      break;
+
+
+          // parse input substitution rate parameters
+        case 17: 
+          if(sscanf(optarg, "%lf", &(tr->inputSubstRates[0])) != 1)
+		{
+		  printf("\nError parsing RAxML expects a floating point value > 0.0 \n\n");
+		  errorExit(-1);
+		}
+
+	      if(tr->inputSubstRates[0] <= 0.0)
+		{
+		  printf("\nError parsing accumulated EPA placement weight cutoff, RAxML expects a floating point value > 0.0 and <= 1.0\n\n");
+		  errorExit(-1);
+		}
+	      break;
+
+
+          // parse input substitution rate parameters
+        case 18: 
+          if(sscanf(optarg, "%lf", &(tr->inputSubstRates[1])) != 1)
+		{
+		  printf("\nError parsing RAxML expects a floating point value > 0.0 \n\n");
+		  errorExit(-1);
+		}
+
+	      if(tr->inputSubstRates[1] <= 0.0)
+		{
+		  printf("\nError parsing accumulated EPA placement weight cutoff, RAxML expects a floating point value > 0.0 and <= 1.0\n\n");
+		  errorExit(-1);
+		}
+	      break;
+
+
+          // parse input substitution rate parameters
+        case 19: 
+          if(sscanf(optarg, "%lf", &(tr->inputSubstRates[2])) != 1)
+		{
+		  printf("\nError parsing RAxML expects a floating point value > 0.0 \n\n");
+		  errorExit(-1);
+		}
+
+	      if(tr->inputSubstRates[2] <= 0.0)
+		{
+		  printf("\nError parsing accumulated EPA placement weight cutoff, RAxML expects a floating point value > 0.0 and <= 1.0\n\n");
+		  errorExit(-1);
+		}
+	      break;
+
+
+          // parse input substitution rate parameters
+        case 20: 
+          if(sscanf(optarg, "%lf", &(tr->inputSubstRates[3])) != 1)
+		{
+		  printf("\nError parsing RAxML expects a floating point value > 0.0 \n\n");
+		  errorExit(-1);
+		}
+
+	      if(tr->inputSubstRates[3] <= 0.0)
+		{
+		  printf("\nError parsing accumulated EPA placement weight cutoff, RAxML expects a floating point value > 0.0 and <= 1.0\n\n");
+		  errorExit(-1);
+		}
+	      break;
+
+
+          // parse input substitution rate parameters
+        case 21: 
+          if(sscanf(optarg, "%lf", &(tr->inputSubstRates[4])) != 1)
+		{
+		  printf("\nError parsing RAxML expects a floating point value > 0.0 \n\n");
+		  errorExit(-1);
+		}
+
+	      if(tr->inputSubstRates[4] <= 0.0)
+		{
+		  printf("\nError parsing accumulated EPA placement weight cutoff, RAxML expects a floating point value > 0.0 and <= 1.0\n\n");
+		  errorExit(-1);
+		}
+	      break;
+
+
+
+
+
 	    default:
 	      if(flagCheck)
 		{

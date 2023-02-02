@@ -4179,17 +4179,27 @@ static void genericInvariant(tree *tr, int lower, int upper, const unsigned int 
   *weightOfInvariableColumns += sum;
 }
 
-static void setRates(double *r, int rates, boolean JC69, int to_set[])
+static void setRates(double *r, int rates, boolean JC69)
 {
   int 
     i;
-
 
   if(JC69)
     for(i = 0; i < rates - 1; i++)    
       r[i] = 1.0;
   else
     for(i = 0; i < rates - 1; i++)    
+      r[i] = 0.5;
+
+  r[rates - 1] = 1.0;
+}
+
+static void setRatesCustomGTR(double *r, int rates, double to_set[])
+{
+  int 
+    i;
+
+  for(i = 0; i < rates - 1; i++)    
       r[i] = to_set[i];
 
   r[rates - 1] = 1.0;
@@ -4250,7 +4260,7 @@ void initRateMatrix(tree *tr)
 	      
 	      break;
 	    case GTR_MULTI_STATE:
-	      setRates(tr->partitionData[model].substRates, rates, JC69);
+	      setRatesCustomGTR(tr->partitionData[model].substRates, rates, tr->inputSubstRates);
 	      break;
 	    default:
 	      assert(0);
